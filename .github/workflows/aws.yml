@@ -79,3 +79,10 @@ jobs:
         STAGE: dev
       run: |
         aws ssm put-parameter --name "/$NAME/$STAGE/version/latest" --value "$VERSION" --type String --overwrite
+
+    - name: Deploy Open Mirror stack
+      id: deploy-stack
+      env:
+        PROJECT_NAME: OpenMirrorDeployment
+      run: |
+        aws codebuild start-build --project-name $PROJECT_NAME
