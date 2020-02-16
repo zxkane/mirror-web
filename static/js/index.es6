@@ -14,7 +14,7 @@ var help_url = {};
 global_options.helps.forEach((h) => help_url[h.mirrorid] = h.url);
 var new_mirrors = {};
 global_options.options.new_mirrors.forEach((m) => new_mirrors[m] = true);
-var unlisted = global_options.options.unlisted_mirrors;
+var unlisted = []; //global_options.options.unlisted_mirrors;
 var options = {};
 global_options.options.force_help_mirrors.forEach((m) => options[m] = {'url': "/help/" + m + "/"})
 var descriptions = {};
@@ -161,43 +161,6 @@ var processMirrorItem = function(d){
 	[d.next_schedule, d.next_schedule_ago] = stringifyTime(d.next_schedule_ts);
 	return d;
 }
-
-var vmIso = new Vue({
-	el: "#isoModal",
-	data: {
-		distroList: [],
-		selected: {},
-		curCategory: "os"
-	},
-	created: function () {
-		var self = this;
-		$.getJSON("/static/status/isoinfo.json", function (isoinfo) {
-			self.distroList = isoinfo;
-			self.selected = self.curDistroList[0];
-			if (window.location.hash.match(/#iso-download(\?.*)?/)) {
-				$('#isoModal').modal();
-			}
-		});
-	},
-	computed: {
-		curDistroList () {
-			return this.distroList
-				.filter((x)=> x.category === this.curCategory)
-				.sort(function (a, b) {
-					return a.distro.localeCompare(b.distro);
-				});
-		}
-	},
-	methods: {
-		switchDistro (distro) {
-			this.selected = distro;
-		},
-		switchCategory (category) {
-			this.curCategory = category;
-			this.selected = this.curDistroList[0];
-		}
-	}
-});
 
 });
 

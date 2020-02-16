@@ -372,45 +372,12 @@ mirror_desc:
     desc: 著名的网络监视、管理系统
 
 new_mirrors:
-  - binutils-gdb.git
-  - glibc.git
-  - artixlinux-iso
-  - manjaro-arm
-  - fdroid
-  - kubernetes
-  - tlpretest
-  - racket-installers
-  - AdoptOpenJDK
-  - nix-channels
-  - nixos-images
-  - proxmox
-  - voidlinux
+  - alpine
+  - docker-ce
+  - mongodb
+  - rubygems
 
 unlisted_mirrors:
-  - status: 'success'
-    last_update: '-'
-    name: "AUR"
-    url: 'https://aur.tuna.tsinghua.edu.cn/'
-    upstream: 'https://aur.archlinux.org/'
-    is_master: true
-  - link_to: 'osdn'
-    name: "manjaro-cd"
-    url: '/osdn/storage/g/m/ma/manjaro/'
-  - link_to: 'osdn'
-    name: "manjaro-arm-cd"
-    url: '/osdn/storage/g/m/ma/manjaro-arm/'
-  - link_to: 'osdn'
-    name: "mxlinux-isos"
-    url: '/osdn/storage/g/m/mx/mx-linux/ISOs/'
-  - link_to: 'github-release'
-    name: "prometheus"
-    url: '/github-release/prometheus/prometheus/'
-  - link_to: 'github-release'
-    name: "iina"
-    url: '/github-release/iina/iina/'
-  - link_to: 'github-release'
-    name: "VSCodium"
-    url: '/github-release/VSCodium/vscodium/'
 
 force_help_mirrors:
   - AOSP
