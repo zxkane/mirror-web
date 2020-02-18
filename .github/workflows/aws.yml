@@ -83,6 +83,7 @@ jobs:
     - name: Deploy Open Mirror stack
       id: deploy-stack
       env:
-        PROJECT_NAME: OpenMirrorDeployment
+        PROJECT_NAME: OpenMirror-Deployment
+        STAGE: dev
       run: |
-        aws codebuild start-build --project-name $PROJECT_NAME
+        aws codebuild start-build --project-name $PROJECT_NAME-${STAGE}
